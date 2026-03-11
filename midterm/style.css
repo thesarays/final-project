@@ -3,7 +3,7 @@ body {
     background-color: #aad4cf;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0; /* remove top/bottom padding so header touches top */
 }
 
 /* Header */
@@ -13,14 +13,14 @@ header {
 
 header img {
     display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto; /* this centers the image horizontally */
+    width: 100%;   /* make image full width */
+    height: auto;  /* keep proportions */
+    margin: 0;     /* remove extra space */
 }
 
 .site-title {
     position: absolute;
-    top: 20px; /* or adjust to how high you want it */
+    top: 20px; /* adjust vertical position of title */
     left: 50%;
     transform: translateX(-50%);
     color: white;
