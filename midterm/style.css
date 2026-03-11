@@ -3,10 +3,10 @@ body {
     background-color: #aad4cf;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
-/* Header Container */
+/* Header */
 .header-container {
     position: relative;
     text-align: center;
@@ -14,15 +14,13 @@ body {
     margin: 0 auto;
 }
 
-/* Header Image */
 .header-image {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 0 auto;
+    margin: 0 auto; /* perfectly centers the image */
 }
 
-/* Site Title */
 .site-title {
     position: absolute;
     top: 50%;
@@ -41,7 +39,7 @@ nav {
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
@@ -86,7 +84,7 @@ article::after {
     clear: both;
 }
 
-/* Form Styles */
+/* Contact Form */
 form {
     border: 1px solid #999;
     padding: 20px;
@@ -113,5 +111,5 @@ form button {
 /* Footer */
 footer {
     text-align: right;
-    padding: 10px 0;
+    padding: 10px 30px;
 }
