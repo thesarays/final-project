@@ -3,33 +3,31 @@ body {
     background-color: #aad4cf;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px;
 }
 
 /* Header */
-.header-container {
+header {
     position: relative;
-    text-align: center;
-    max-width: 1000px;
-    margin: 0 auto;
 }
 
-.header-image {
+header img {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 0 auto; /* center the image */
+    margin: 0 auto; /* this centers the image horizontally */
 }
 
 .site-title {
     position: absolute;
-    top: 50%;
+    top: 20px; /* or adjust to how high you want it */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     color: white;
     font-size: 3rem;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-    margin: 0;
+    text-align: center;
+    width: 100%;
 }
 
 /* Navigation */
@@ -39,7 +37,7 @@ nav {
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
@@ -84,7 +82,7 @@ article::after {
     clear: both;
 }
 
-/* Contact Form */
+/* Form Styles */
 form {
     border: 1px solid #999;
     padding: 20px;
@@ -111,5 +109,5 @@ form button {
 /* Footer */
 footer {
     text-align: right;
-    padding: 10px 30px;
+    padding: 10px 0;
 }
