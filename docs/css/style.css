@@ -1,6 +1,6 @@
-/* --- 1. CORE & RESET --- */
+/* --- 1. RESET & CORE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Open Sans', sans-serif; line-height: 1.4; color: #333; }
+body { font-family: 'Open Sans', sans-serif; line-height: 1.4; color: #333; background: #fff; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 img { width: 100%; display: block; }
 
@@ -12,30 +12,33 @@ img { width: 100%; display: block; }
 .nav a { color: #999; text-decoration: none; font-size: 14px; font-weight: bold; }
 .nav li:first-child a { color: #c19434; }
 
-/* --- 3. HERO (With bottom margin to stop merging) --- */
+.search-form { display: flex; background: #fff; padding: 2px; }
+.search-form input { border: none; padding: 5px; outline: none; width: 100px; }
+.search-form button { background: #000; border: none; color: #c19434; padding: 0 10px; cursor: pointer; }
+
+/* --- 3. HERO (The "Welcome" Box) --- */
 .hero { 
     background: url('../images/main-banner.jpg') no-repeat center center/cover; 
     height: 550px; 
     display: flex; 
     align-items: center; 
-    margin-bottom: 0; /* Keeps it flush if needed, but we will add padding to About */
 }
 .hero .container { 
     background-color: rgba(0, 0, 0, 0.7); 
     padding: 60px; 
     max-width: 750px; 
-    margin-left: 5%; 
+    margin-left: 5%; /* Centered a lil bit away from the edge */
 }
 .hero h1 { color: #fff; font-size: 3.8rem; margin-bottom: 10px; }
 .hero p { color: #fff; font-size: 1.2rem; margin-bottom: 25px; }
 .btn { display: inline-block; background-color: #c19434; color: #000; padding: 12px 35px; text-decoration: none; font-weight: bold; }
 
-/* --- 4. ABOUT SECTION (Added top padding to prevent merging) --- */
+/* --- 4. ABOUT SECTION --- */
 .about { background: #fceabb; padding: 100px 0; }
 .about .container { display: flex; gap: 40px; align-items: center; }
 .about img { width: 45%; }
 
-/* --- 5. SERVICES --- */
+/* --- 5. SERVICES (The Video.jpg Row) --- */
 .services { padding: 80px 0; }
 .services-top, .services-bottom { display: grid; gap: 25px; margin-top: 20px; }
 @media (min-width: 768px) {
@@ -47,7 +50,7 @@ article img { height: 220px; object-fit: cover; }
 article h3, article p { padding: 15px 20px; }
 article a { display: inline-block; background: #222; color: #fff; padding: 10px 20px; margin: 0 20px 20px; text-decoration: none; }
 
-/* --- 6. VISION (Adding the background image) --- */
+/* --- 6. VISION BACKGROUND --- */
 .vision { 
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/vision.jpg') no-repeat center center/cover; 
     padding: 120px 0; 
@@ -55,31 +58,43 @@ article a { display: inline-block; background: #222; color: #fff; padding: 10px 
     text-align: center; 
 }
 .vision h2 { font-size: 3rem; margin-bottom: 15px; }
-.vision p { font-size: 1.2rem; margin-bottom: 25px; }
-.vision a { color: #fff; font-weight: bold; text-decoration: underline; }
 
-/* --- 7. TEAM (Stacked) --- */
+/* --- 7. TEAM (John & Bob - Big and Stacked) --- */
 .team { padding: 80px 0; }
 .team .container { display: flex; flex-direction: column; gap: 40px; }
-.team article { display: flex; background-color: #fceabb; }
+.team article { display: flex; background-color: #fceabb; width: 100%; }
 .team article img { width: 40%; height: 400px; object-fit: cover; }
 .team article div { width: 60%; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+.team h3 { font-size: 2rem; }
 
-/* --- 8. CONTACT & TABLE --- */
+/* --- 8. CONTACT US (Split 50/50) --- */
 .contact { padding: 80px 0; }
-.contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.contact-content { display: grid; gap: 50px; }
+@media (min-width: 768px) {
+    .contact-content { grid-template-columns: 1fr 1fr; }
+}
 .contact input, .contact textarea { padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; width: 100%; }
 .contact button { background: #222; color: #fff; padding: 15px 40px; border: none; font-weight: bold; cursor: pointer; }
 iframe { width: 100%; height: 100%; min-height: 400px; border: none; }
 
+/* --- 9. HOURS OF OPERATION TABLE --- */
+.hours { padding: 40px 0; }
+.hours h3 { margin-bottom: 20px; font-size: 1.8rem; }
+.hours table { width: 100%; border-collapse: collapse; }
+.hours th { background-color: #c19434; text-align: left; padding: 15px; border: 1px solid #ddd; }
+.hours td { padding: 12px 15px; border: 1px solid #ddd; }
+.hours tr:nth-child(even) { background-color: #fceabb; }
+
+/* --- 10. FOOTER --- */
 .footer { background: #222; color: #fff; text-align: center; padding: 40px 0; }
 
-/* --- 9. MOBILE FIX --- */
+/* --- 11. MOBILE FIXES --- */
 @media (max-width: 768px) {
-    .contact-content, .about .container, .services-top, .services-bottom { grid-template-columns: 1fr; }
+    .header .container { flex-direction: column; gap: 15px; }
     .about .container { flex-direction: column; }
     .about img { width: 100%; }
     .team article { flex-direction: column; }
     .team article img, .team article div { width: 100%; }
-    .hero .container { margin: 0; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero .container { margin: 0; padding: 30px; }
 }
