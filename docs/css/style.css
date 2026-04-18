@@ -1,89 +1,65 @@
-/* HEADER - This stays at the very top */
-.header {
-    background-color: #222;
-    padding: 10px 0;
+/* SERVICES SECTION */
+.services {
+    padding: 60px 0;
 }
 
-.header .container {
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* This handles the 2-column top and 3-column bottom layout for Desktop */
+.services-top, 
+.services-bottom {
+    display: grid;
+    grid-template-columns: 1fr; /* Default for mobile stack */
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.services article {
+    background-color: #fceabb; /* Cream background from mockup */
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 }
 
-/* Nav links styling */
-.nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
+.services article img {
+    width: 100%;
+    height: 250px; /* Adjusted to keep images uniform */
+    object-fit: cover; /* This prevents the images from stretching */
 }
 
-.nav a {
-    color: #999; /* Greyed out like the mockup */
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
+/* Text and Links inside Service boxes */
+.services h3 {
+    padding: 20px 20px 10px 20px;
+    font-size: 1.5rem;
 }
 
-.nav a:hover, .nav li:first-child a {
-    color: #c19434; /* Gold highlight for 'Home' */
+.services p {
+    padding: 0 20px 20px 20px;
+    flex-grow: 1; /* Pushes the button to the bottom if text is short */
 }
 
-/* HERO SECTION - The "Welcome" part */
-.hero {
-    background: url('../images/main-banner.jpg') no-repeat center center/cover;
-    height: 500px;
-    display: flex;
-    align-items: center; /* Vertically centers the welcome box */
-    position: relative;
-}
-
-/* The semi-transparent box around the text */
-.hero .container {
-    background-color: rgba(0, 0, 0, 0.7); /* The dark transparent box from mockup */
-    padding: 40px;
-    max-width: 800px;
-    margin-left: 50px; /* Aligns it to the left like the photo */
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    color: #ffffff;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.hero p {
-    color: #ffffff;
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
-
-/* Hero Button */
-.btn {
+.services article a {
     display: inline-block;
-    background-color: #c19434;
-    color: #000;
-    padding: 12px 30px;
+    background-color: #222;
+    color: #fff;
     text-decoration: none;
+    padding: 12px 20px;
+    margin: 0 20px 20px 20px;
+    width: fit-content;
     font-weight: bold;
-    font-size: 16px;
 }
 
-/* Mobile Adjustments for Hero */
-@media (max-width: 768px) {
-    .hero {
-        height: auto;
-        padding: 40px 0;
-    }
-    
-    .hero .container {
-        margin-left: 20px;
-        margin-right: 20px;
-        padding: 20px;
+/* --- DESKTOP GRID LOGIC --- */
+@media (min-width: 900px) {
+    /* Two boxes on top (Digital & Marketing) */
+    .services-top {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .hero h1 {
-        font-size: 2.5rem;
+    /* Three boxes on bottom (Video, Web, Print) */
+    .services-bottom {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
